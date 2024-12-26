@@ -1,11 +1,7 @@
 def record_update(local_record):
     try:
-        with open("gameLogic/record_detected.txt", mode='r+', encoding='utf8') as file:
-            r = int(file.readline())
-            if local_record > r:
-                r = local_record
-                with open("gameLogic/record_detected.txt", mode='w', encoding='utf8') as file:
-                    file.write(str(r))
+        with open("gameLogic/record.txt", mode='w+', encoding='utf8') as file1:
+            file1.write(str(local_record))
     except FileNotFoundError:
         print("Файл не найден. Укажите путь к файлу вручную.")
         exit()
